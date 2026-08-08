@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <!-- normalize css -->
-    <link rel="stylesheet" href="./normalize.css" />
-    <!-- main css -->
-    <link rel="stylesheet" href="./main.css" />
-    <title>Task Manager || Final</title>
-  </head>
-  <body>
-    <form class="task-form">
-      <h4>task manager</h4>
-      <div class="form-control">
-        <input
-          type="text"
-          name="name"
-          class="task-input"
-          placeholder="e.g. wash dishes"
-        />
-        <button type="submit" class="btn submit-btn">submit</button>
-      </div>
-      <div class="form-alert"></div>
-    </form>
-    <section class="tasks-container">
-      <p class="loading-text">Loading...</p>
-      <div class="tasks"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="./normalize.css" />
+  <link rel="stylesheet" href="./main.css" />
+  <title>Daily Quest System</title>
+</head>
+<body>
+  <main class="system-shell">
+    <section class="system-window">
+      <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+
+      <header class="quest-header">
+        <div class="quest-title">QUEST INFO</div>
+        <p class="quest-message">[Daily Quest: Player Training has arrived]</p>
+        <div class="goal-title">GOAL</div>
+      </header>
+
+      <form class="task-form">
+        <div class="form-control">
+          <input type="text" name="name" class="task-input" placeholder="Add a new objective..." autocomplete="off" />
+          <button type="submit" class="btn submit-btn">ADD QUEST</button>
+        </div>
+        <div class="form-alert"></div>
+      </form>
+
+      <div class="system-divider"></div>
+
+      <section class="tasks-container">
+        <p class="loading-text">Loading objectives...</p>
+        <div class="tasks"></div>
+      </section>
+
+      <div class="system-divider"></div>
+
+      <section class="quest-footer">
+        <div class="footer-actions">
+          <button type="button" class="reward-btn"><i class="fas fa-gift"></i> Preview Rewards</button>
+          <button type="button" class="complete-quest-btn">COMPLETE QUEST <span>○</span></button>
+        </div>
+        <p class="warning">WARNING: Failure to complete the daily quest will result in an appropriate <strong>penalty.</strong></p>
+        <div class="timer-label">DAILY RESET</div>
+        <div class="timer" id="quest-timer">00:00:00</div>
+      </section>
     </section>
-    <!-- axios -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./browser-app.js"></script>
-  </body>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./browser-app.js"></script>
+</body>
 </html>
